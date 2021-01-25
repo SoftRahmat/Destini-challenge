@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c3cee3;}
+.s1 { color: #c3e88d;}
+.s2 { color: #fffa12;}
+.s3 { color: #3be1ff; font-style: italic;}
+.s4 { color: #c792ea; font-style: italic;}
+.s5 { color: #ff4e2d;}
+.s6 { color: #65ff39;}
+.s7 { color: #f4ffff;}
+.s8 { color: #eefffa;}
+.s9 { color: #ffff22;}
+.s10 { color: #f78c6c;}
+.s11 { color: #89ddff;}
+</style>
+</head>
+<body bgcolor="#0f111a">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'story_brain.dart'</span><span class="s2">;</span>
+
+<span class="s3">//TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.</span>
+
+<span class="s4">void </span><span class="s0">main</span><span class="s5">() </span><span class="s6">=&gt; </span><span class="s0">runApp</span><span class="s5">(</span><span class="s0">Destini</span><span class="s5">())</span><span class="s2">;</span>
+
+<span class="s4">class </span><span class="s0">Destini </span><span class="s4">extends </span><span class="s0">StatelessWidget </span><span class="s7">{</span>
+  <span class="s0">Widget build</span><span class="s5">(</span><span class="s0">BuildContext context</span><span class="s5">) </span><span class="s7">{</span>
+    <span class="s4">return </span><span class="s0">MaterialApp</span><span class="s5">(</span>
+      <span class="s0">theme</span><span class="s6">: </span><span class="s0">ThemeData</span><span class="s8">.</span><span class="s0">dark</span><span class="s5">()</span><span class="s9">,</span>
+      <span class="s0">home</span><span class="s6">: </span><span class="s0">StoryPage</span><span class="s5">()</span><span class="s9">,</span>
+    <span class="s5">)</span><span class="s2">;</span>
+  <span class="s7">}</span>
+<span class="s7">}</span>
+
+<span class="s3">//TODO: Step 9 - Create a new storyBrain object from the StoryBrain class.</span>
+<span class="s0">StoryBrain storyBrain </span><span class="s6">= </span><span class="s0">StoryBrain</span><span class="s5">()</span><span class="s2">;</span>
+
+<span class="s4">class </span><span class="s0">StoryPage </span><span class="s4">extends </span><span class="s0">StatefulWidget </span><span class="s7">{</span>
+  <span class="s0">_StoryPageState createState</span><span class="s5">() </span><span class="s6">=&gt; </span><span class="s0">_StoryPageState</span><span class="s5">()</span><span class="s2">;</span>
+<span class="s7">}</span>
+
+<span class="s4">class </span><span class="s0">_StoryPageState </span><span class="s4">extends </span><span class="s0">State</span><span class="s6">&lt;</span><span class="s0">StoryPage</span><span class="s6">&gt; </span><span class="s7">{</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build</span><span class="s5">(</span><span class="s0">BuildContext context</span><span class="s5">) </span><span class="s7">{</span>
+    <span class="s4">return </span><span class="s0">Scaffold</span><span class="s5">(</span>
+      <span class="s0">body</span><span class="s6">: </span><span class="s0">Container</span><span class="s5">(</span>
+        <span class="s0">decoration</span><span class="s6">: </span><span class="s0">BoxDecoration</span><span class="s5">(</span>
+          <span class="s0">image</span><span class="s6">: </span><span class="s0">DecorationImage</span><span class="s5">(</span>
+            <span class="s0">image</span><span class="s6">: </span><span class="s0">AssetImage</span><span class="s5">(</span><span class="s1">'images/b.gif'</span><span class="s5">)</span><span class="s9">,</span>
+            <span class="s0">fit</span><span class="s6">: </span><span class="s0">BoxFit</span><span class="s8">.</span><span class="s0">cover</span><span class="s9">,</span>
+          <span class="s5">)</span><span class="s9">,</span>
+        <span class="s5">)</span><span class="s9">,</span>
+        <span class="s0">padding</span><span class="s6">: </span><span class="s0">EdgeInsets</span><span class="s8">.</span><span class="s0">symmetric</span><span class="s5">(</span><span class="s0">vertical</span><span class="s6">: </span><span class="s10">50.0</span><span class="s9">, </span><span class="s0">horizontal</span><span class="s6">: </span><span class="s10">15.0</span><span class="s5">)</span><span class="s9">,</span>
+        <span class="s0">constraints</span><span class="s6">: </span><span class="s0">BoxConstraints</span><span class="s8">.</span><span class="s0">expand</span><span class="s5">()</span><span class="s9">,</span>
+        <span class="s0">child</span><span class="s6">: </span><span class="s0">SafeArea</span><span class="s5">(</span>
+          <span class="s0">child</span><span class="s6">: </span><span class="s0">Column</span><span class="s5">(</span>
+            <span class="s0">crossAxisAlignment</span><span class="s6">: </span><span class="s0">CrossAxisAlignment</span><span class="s8">.</span><span class="s0">stretch</span><span class="s9">,</span>
+            <span class="s0">children</span><span class="s6">: &lt;</span><span class="s0">Widget</span><span class="s6">&gt;</span><span class="s11">[</span>
+              <span class="s0">Expanded</span><span class="s5">(</span>
+                <span class="s0">flex</span><span class="s6">: </span><span class="s10">12</span><span class="s9">,</span>
+                <span class="s0">child</span><span class="s6">: </span><span class="s0">Center</span><span class="s5">(</span>
+                  <span class="s0">child</span><span class="s6">: </span><span class="s0">Text</span><span class="s5">(</span>
+                    <span class="s3">//TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.</span>
+                    <span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">getStory</span><span class="s5">()</span><span class="s9">,</span>
+                    <span class="s0">style</span><span class="s6">: </span><span class="s0">TextStyle</span><span class="s5">(</span>
+                      <span class="s0">fontSize</span><span class="s6">: </span><span class="s10">25.0</span><span class="s9">,</span>
+                      <span class="s0">fontFamily</span><span class="s6">: </span><span class="s1">'Source Sans Pro'</span><span class="s9">,</span>
+                    <span class="s5">)</span><span class="s9">,</span>
+                  <span class="s5">)</span><span class="s9">,</span>
+                <span class="s5">)</span><span class="s9">,</span>
+              <span class="s5">)</span><span class="s9">,</span>
+              <span class="s0">Expanded</span><span class="s5">(</span>
+                <span class="s0">flex</span><span class="s6">: </span><span class="s10">2</span><span class="s9">,</span>
+                <span class="s0">child</span><span class="s6">: </span><span class="s0">FlatButton</span><span class="s5">(</span>
+                  <span class="s0">onPressed</span><span class="s6">: </span><span class="s5">() </span><span class="s7">{</span>
+                    <span class="s3">//Choice 1 made by user.</span>
+                    <span class="s3">//TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.</span>
+                    <span class="s3">//TODO: Step 24 - Run the app and try to figure out what code you need to add to this file to make the story change when you press on the choice buttons.</span>
+                    <span class="s0">setState</span><span class="s5">(() </span><span class="s7">{</span>
+                      <span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">nextStory</span><span class="s5">(</span><span class="s10">1</span><span class="s5">)</span><span class="s2">;</span>
+                    <span class="s7">}</span><span class="s5">)</span><span class="s2">;</span>
+                  <span class="s7">}</span><span class="s9">,</span>
+                  <span class="s0">color</span><span class="s6">: </span><span class="s0">Colors</span><span class="s8">.</span><span class="s0">red</span><span class="s9">,</span>
+                  <span class="s0">child</span><span class="s6">: </span><span class="s0">Text</span><span class="s5">(</span>
+                    <span class="s3">//TODO: Step 13 - Use the storyBrain to get the text for choice 1.</span>
+                    <span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">getChoice1</span><span class="s5">()</span><span class="s9">,</span>
+                    <span class="s0">style</span><span class="s6">: </span><span class="s0">TextStyle</span><span class="s5">(</span>
+                      <span class="s0">fontSize</span><span class="s6">: </span><span class="s10">20.0</span><span class="s9">,</span>
+                      <span class="s0">fontFamily</span><span class="s6">: </span><span class="s1">'Source Sans Pro'</span><span class="s9">,</span>
+                    <span class="s5">)</span><span class="s9">,</span>
+                  <span class="s5">)</span><span class="s9">,</span>
+                <span class="s5">)</span><span class="s9">,</span>
+              <span class="s5">)</span><span class="s9">,</span>
+              <span class="s0">SizedBox</span><span class="s5">(</span>
+                <span class="s0">height</span><span class="s6">: </span><span class="s10">20.0</span><span class="s9">,</span>
+              <span class="s5">)</span><span class="s9">,</span>
+              <span class="s0">Expanded</span><span class="s5">(</span>
+                <span class="s0">flex</span><span class="s6">: </span><span class="s10">2</span><span class="s9">,</span>
+                <span class="s3">//TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.</span>
+                <span class="s3">//TODO: Step 28 - Set the &quot;visible&quot; property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.</span>
+                <span class="s0">child</span><span class="s6">: </span><span class="s0">Visibility</span><span class="s5">(</span>
+                  <span class="s0">visible</span><span class="s6">: </span><span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">buttonShouldBeVisible</span><span class="s5">()</span><span class="s9">,</span>
+                  <span class="s0">child</span><span class="s6">: </span><span class="s0">FlatButton</span><span class="s5">(</span>
+                    <span class="s0">onPressed</span><span class="s6">: </span><span class="s5">() </span><span class="s7">{</span>
+                      <span class="s3">//Choice 2 made by user.</span>
+                      <span class="s3">//TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.</span>
+                      <span class="s0">setState</span><span class="s5">(() </span><span class="s7">{</span>
+                        <span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">nextStory</span><span class="s5">(</span><span class="s10">2</span><span class="s5">)</span><span class="s2">;</span>
+                      <span class="s7">}</span><span class="s5">)</span><span class="s2">;</span>
+                    <span class="s7">}</span><span class="s9">,</span>
+                    <span class="s0">color</span><span class="s6">: </span><span class="s0">Colors</span><span class="s8">.</span><span class="s0">blue</span><span class="s9">,</span>
+                    <span class="s0">child</span><span class="s6">: </span><span class="s0">Text</span><span class="s5">(</span>
+                      <span class="s3">//TODO: Step 14 - Use the storyBrain to get the text for choice 2.</span>
+                      <span class="s0">storyBrain</span><span class="s8">.</span><span class="s0">getChoice2</span><span class="s5">()</span><span class="s9">,</span>
+                      <span class="s0">style</span><span class="s6">: </span><span class="s0">TextStyle</span><span class="s5">(</span>
+                        <span class="s0">fontSize</span><span class="s6">: </span><span class="s10">20.0</span><span class="s9">,</span>
+                        <span class="s0">fontFamily</span><span class="s6">: </span><span class="s1">'Source Sans Pro'</span><span class="s9">,</span>
+                      <span class="s5">)</span><span class="s9">,</span>
+                    <span class="s5">)</span><span class="s9">,</span>
+                  <span class="s5">)</span><span class="s9">,</span>
+                <span class="s5">)</span><span class="s9">,</span>
+              <span class="s5">)</span><span class="s9">,</span>
+            <span class="s11">]</span><span class="s9">,</span>
+          <span class="s5">)</span><span class="s9">,</span>
+        <span class="s5">)</span><span class="s9">,</span>
+      <span class="s5">)</span><span class="s9">,</span>
+    <span class="s5">)</span><span class="s2">;</span>
+  <span class="s7">}</span>
+<span class="s7">}</span>
+
+<span class="s3">//TODO: Step 29 - Run the app and test it against the Story Outline to make sure you've completed all the steps. The code for the completed app can be found here: https://github.com/londonappbrewery/destini-challenge-completed/</span>
+</pre>
+</body>
+</html>
